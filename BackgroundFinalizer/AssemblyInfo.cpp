@@ -10,7 +10,7 @@ using namespace System::Security::Permissions;
 // associated with an assembly.
 //
 [assembly:AssemblyTitleAttribute(L"BackgroundFinalizer")];
-[assembly:AssemblyDescriptionAttribute(L"Finalizers that run in the application background")];
+[assembly:AssemblyDescriptionAttribute(L"Defines a class that can be used to run finalizers out of line with the garbage collector")];
 [assembly:AssemblyConfigurationAttribute(L"")];
 [assembly:AssemblyCompanyAttribute(L"")];
 [assembly:AssemblyProductAttribute(L"BackgroundFinalizer")];
