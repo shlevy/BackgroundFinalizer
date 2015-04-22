@@ -60,5 +60,7 @@ namespace BackgroundFinalizer {
 		const Finalizer^ finalizer;
 
 		initonly IBackgroundFinalizerManager^ manager;
+
+		initonly IntPtr space;
 	};
 }

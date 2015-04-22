@@ -16,20 +16,17 @@ namespace BackgroundFinalizer
 		/// <summary>
 		/// Allocate space for a new finalizer.
 		/// </summary>
-		/// <remarks>
-		/// Each call to <c>AllocateSpace</c> must be followed by a
-		/// corresponding call to <c>EnqueueFinalizer</c>.
-		/// </remarks>
-		void AllocateSpace();
+		IntPtr AllocateSpace();
 
 		/// <summary>
 		/// Add a finalizer to the background queue.
 		/// </summary>
+		/// <param name="space">The space to use for the queue.</param>
 		/// <param name="finalizer">The finalizer to enqueue.</param>
 		/// <remarks>
 		/// <para>
-		/// Each call to <c>EnqueueFinalizer</c> must be preceded by
-		/// a corresponding call to <c>AllocateSpace</c>.
+		/// <paramref name="space"/> must come from a call to
+		/// <c>AllocateSpace()</c>.
 		/// </para>
 		///
 		/// <para>
@@ -54,7 +51,7 @@ namespace BackgroundFinalizer
 		/// be called.
 		/// </para>
 		/// </remarks>
-		void EnqueueFinalizer(
+		void EnqueueFinalizer(IntPtr space,
 			const BackgroundFinalizer::Finalizer^ finalizer);
 	};
 }
