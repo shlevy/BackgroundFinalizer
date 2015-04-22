@@ -4,15 +4,14 @@
 namespace BackgroundFinalizer
 {
 	BackgroundFinalizer::BackgroundFinalizer(Finalizer^ finalizer,
-		IBackgroundFinalizerManager^ manager) : finalizer(finalizer),
-			manager(manager)
+		IBackgroundFinalizerManager^ manager) : manager(manager)
 	{
-		space = manager->AllocateSpace();
+		space = manager->AllocateSpace(finalizer);
 	}
 
 	BackgroundFinalizer::!BackgroundFinalizer()
 	{
-		manager->EnqueueFinalizer(space, finalizer);
+		manager->EnqueueFinalizer(space);
 	}
 
 	BackgroundFinalizer::~BackgroundFinalizer()

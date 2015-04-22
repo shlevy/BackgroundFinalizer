@@ -81,10 +81,12 @@
     <ClInclude Include="BackgroundFinalizer.h" />
     <ClInclude Include="IBackgroundFinalizerManager.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="WorkerThreadBackgroundFinalizerManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="BackgroundFinalizer.cpp" />
+    <ClCompile Include="WorkerThreadBackgroundFinalizerManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc" />
